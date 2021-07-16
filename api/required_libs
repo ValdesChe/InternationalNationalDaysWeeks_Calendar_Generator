@@ -1,2 +1,4 @@
+requests==2.22.0
 argparse
-selenium
+beautifulsoup4==4.9.3
+lxml
