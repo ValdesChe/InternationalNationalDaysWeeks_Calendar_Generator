@@ -15,4 +15,11 @@ DEFAULT_OUTPUT_COLOR = {
     'evt_link':  {"fill_color" : "black", "back_color" : "white"}
 }
 
+DEFAULT_DB_CONFIG = {
+    "user" : "root", 
+    "password" : "Your_Database_Password", 
+    "host" : "localhost", 
+    "database" :"intercalendar"
+}
+
 DEFAULT_OUTPUT_DIR = "output/"

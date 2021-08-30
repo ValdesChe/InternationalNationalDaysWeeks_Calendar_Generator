@@ -3,3 +3,4 @@ argparse
 beautifulsoup4==4.9.3
 lxml
 qrcode[pil]
+pymysql
