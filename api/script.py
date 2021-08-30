@@ -1,6 +1,8 @@
 import argparse
 from os import path
 from default import DEFAULT_ARGS_VALUES
+import scrapper
+
 
 def greatings():
     print(''' 
@@ -14,7 +16,7 @@ def parse_args():
     parser = argparse.ArgumentParser(formatter_class=argparse.ArgumentDefaultsHelpFormatter)
     parser.add_argument('-f', '--format',
                         help = 'Output format',
-                        choices= ['pdf', 'xml', 'json', 'html', 'csv'],
+                        choices= DEFAULT_ARGS_VALUES['format_choices'],
                         default= DEFAULT_ARGS_VALUES['format'],
                         required = False)       
     parser.add_argument('-outdir', '--outputdirectory',
@@ -27,8 +29,8 @@ def parse_args():
 """
     Start the scrapper
 """
-def start_scrapper():
-    return
+def start_scrapper(output_format, output_directory):
+    scrapper.scrap(output_format, output_directory)
 
 
 def main():
@@ -38,7 +40,7 @@ def main():
     output_directory = args.outputdirectory
 
     if (path.isdir(output_directory)):
-        # result = start_scrapper()
+        result = start_scrapper(output_format, output_directory)
         print( 'Successfull Execution !!!')
     else:
         raise ValueError('Incorrect Directory path...')
